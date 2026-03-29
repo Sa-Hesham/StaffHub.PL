@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using StaffHub.DAL.Data.DataBase;
+using StaffHub.DAL.Common;
+
 namespace StaffHub.PL;
 
 public class Program
@@ -8,6 +12,12 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddDbContext<ApplicationDBContext>(options =>
+        {
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        });
+       
+        builder.Services.AddDalServices();  
 
         var app = builder.Build();
 
@@ -33,3 +43,4 @@ public class Program
         app.Run();
     }
 }
+
