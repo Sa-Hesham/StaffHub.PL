@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace StaffHub.DAL.Repository.Abstract;
 
- interface IDepartmentRpostiory
+  public interface IDepartmentRpostiory
 {
     public IEnumerable<Department> GetAllDepartments(Expression<Func<Department, bool>>? fillter = null);
 

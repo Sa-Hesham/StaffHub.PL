@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using StaffHub.DAL.Data.DataBase;
 using StaffHub.DAL.Common;
+using StaffHub.PLL.Common;
 
 namespace StaffHub.PL;
 
@@ -18,6 +19,8 @@ public class Program
         });
        
         builder.Services.AddDalServices();  
+        builder.Services.AddPllServices();  
+
 
         var app = builder.Build();
 
