@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="StaffHub.DAL/StaffHub.DAL.csproj" />
+  <Project Path="StaffHub.PL/StaffHub.PL.csproj" />
+  <Project Path="StaffHub.PLL/StaffHub.PLL.csproj" />
+</Solution>
