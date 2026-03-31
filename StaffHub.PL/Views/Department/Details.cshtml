@@ -1,0 +1,80 @@
+﻿
+@model ResponseResult<DeparmentDetailsVM>
+
+
+@if( Model.Result is null || Model.IsHasErrorOrNo)
+{
+    <div class="alert alert-info mt-3">
+        <h2>@Model.Errormessage</h2>
+    </div>
+}
+else
+{
+    
+    <h1 class="my-5 w-75">Department @Model.Result.Name Details</h1>
+
+
+    <ul class="nav nav-tabs" id="departmentTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="general-tab" data-bs-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">General</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="administration-tab" data-bs-toggle="tab" href="#administration" role="tab" aria-controls="administration" aria-selected="false">Administration</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <!-- General Tab Content -->
+        <div class="tab-pane fade show active p-4 border" id="general" role="tabpanel" aria-labelledby="general-tab">
+
+            <div class="row">
+                <div class="form-group col-6">
+                    <label class="col-form-label" asp-for="Result.code"></label>
+                    <input asp-for="Result.code" class="form-control" readonly />
+                </div>
+                <div class="form-group col-6">
+                    <label class="col-form-label" asp-for="Result.Name"></label>
+                    <input asp-for="Result.Name" class="form-control" readonly />
+                </div>
+                <div class="form-group col-12">
+                    <label class="col-form-label" asp-for="Result.Description"></label>
+                    <input asp-for="Result.Description" class="form-control" readonly />
+                </div>
+                <div class="form-group col-12">
+                    <label class="col-form-label">DateOfCreation</label>
+                    <input asp-for="Result.CreatedOn" class="form-control" readonly />
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Administration Tab Content -->
+        <div class="tab-pane fade p-4 border" id="administration" role="tabpanel" aria-labelledby="administration-tab">
+            <div class="form-group  col-12">
+                <label class="col-form-label" asp-for="Result.CreatedBy"></label>
+                <input asp-for="Result.CreatedBy" class="form-control" readonly />
+            </div>
+            <div class="form-group  col-12">
+                <label class="col-form-label">CreatedOn</label>
+                <input asp-for=" Result.CreatedOn" class="form-control" readonly />
+            </div>
+            <div class="form-group  col-12">
+                <label class="col-form-label" asp-for="Result.ModifiedBy"></label>
+                <input asp-for="Result.ModifiedBy" class="form-control" readonly />
+            </div>
+            <div class="form-group  col-12">
+                <label class="col-form-label" asp-for="Result.ModifiedOn"></label>
+                <input asp-for="Result.ModifiedOn" class="form-control" readonly />
+            </div>
+            <div class="form-group  col-12">
+                <label class="col-form-label" >Status</label>
+                <input asp-for="Result.IsActive" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.Result.Id" class="btn btn-success">Edit</a>
+            <a asp-action="Index" class="btn btn-outline-dark">Back To list</a>
+        </div>
+    </div>
+}
+
