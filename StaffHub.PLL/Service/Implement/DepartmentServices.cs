@@ -86,6 +86,7 @@ public class DepartmentServices : IDepartmentServices
 
     public bool Update(UpdateDepartmentVM department)
     {
+
      var result = department.toEditEntity();
         if (result is null)
             return false;   

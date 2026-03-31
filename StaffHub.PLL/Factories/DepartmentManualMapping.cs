@@ -47,7 +47,7 @@ internal  static class DepartmentManualMapping
             Name = department.Name,
             Description = department.Description,
             code = department.code,
-            CreatedOn = department.dateOfCreation.ToDateTime(new TimeOnly())
+            CreatedOn = department.dateOfCreation.HasValue? department.dateOfCreation.Value.ToDateTime(new TimeOnly()) : DateTime.Now,
 
         };
     
@@ -67,7 +67,7 @@ internal  static class DepartmentManualMapping
             Name = department.Name,
             Description = department.Description,
             code = department.code,
-            CreatedOn = department.dateOfmodified.ToDateTime(new TimeOnly())
+           
         };  
 
 

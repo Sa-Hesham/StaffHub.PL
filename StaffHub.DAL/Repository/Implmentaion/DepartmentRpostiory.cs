@@ -77,9 +77,16 @@ public class DepartmentRpostiory : IDepartmentRpostiory
 
     public bool Update(Department department)
     {
-       
-            _db.Departments.Update(department);
-            return _db.SaveChanges() > 0;
+      var entity =  _db.Departments.SingleOrDefault(d => d.Id == department.Id);
+        if(entity == null)
+        {
+            return false;
+        }
+        entity .Name  = department.Name;  
+        entity.Description = department.Description;    
+        entity.code = department.code;  
+        entity.ModifiedOn = DateTime.UtcNow;    
+        return _db.SaveChanges() > 0;
        
        
     }
