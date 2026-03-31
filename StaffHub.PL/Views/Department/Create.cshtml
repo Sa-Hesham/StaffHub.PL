@@ -1,0 +1,38 @@
+﻿@using StaffHub.PLL.ViewModels
+@model CreateDepartmentVM
+
+
+<div class="row justify-content-center align-content-center mt-3">
+<h1 class="col-8 my-4">Create Department</h1>
+
+    <form class="col-8" method="post" asp-action="Create" asp-controller="Department">
+      
+    <div class="form-group mb-3">
+        @* <label class="form-label" for="Code"></label> *@
+        @* <input id="Code" name="Code" type="text" /> *@
+        <label class="form-label">Code</label>
+        <input asp-for="code" class="form-control" />
+        <span asp-validation-for="code" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" type="text">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+            <label for="Name" class="form-label">Description</label>
+            <input asp-for="Description" class="form-control" type="text">
+                <span asp-validation-for="Name" class="text-danger"></span>
+      </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label">DateOfCreation</label>
+                    <input type="date" asp-for="dateOfCreation" class="form-control" />
+                </div>
+   
+    <div class="mt-4 m-auto">
+        <input class="btn btn-primary" type="submit" value="Create" />
+        <a class="btn btn-outline-dark" asp-action="Index" asp-controller="Department">Back to list</a>
+    </div>
+</form>
+</div>

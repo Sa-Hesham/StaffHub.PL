@@ -11,7 +11,7 @@ public class GetDepartmentVM
 {
     public string Name { get; set; } = null!;
 
-     public int Id { get; set; }    
+    public int Id { get; set; }    
     public string CreatedOn { get; set; } = null!;  
 
     public string Description { get; set; } = null!;
