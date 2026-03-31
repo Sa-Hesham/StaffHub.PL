@@ -4,7 +4,7 @@ public abstract class BaseEntity
 {
         public int Id { get; set; }
 
-        public DateTime CreatedOn { get; set; }  
+        public DateTime CreatedOn { get; set; }  = DateTime.Now;    
         public string? CreatedBy { get; set; } = null!;
 
         public DateTime? ModifiedOn { get; set; }

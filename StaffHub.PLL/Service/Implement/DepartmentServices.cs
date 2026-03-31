@@ -45,7 +45,7 @@ public class DepartmentServices : IDepartmentServices
     {
         try
         {
-            var departments = _department.GetAllDepartments();
+            var departments = _department.GetAll();
 
             var result = departments.Select(d => d.MapToGetDepartmentVM()).ToList();
 
