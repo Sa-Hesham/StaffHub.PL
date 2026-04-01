@@ -1,6 +1,6 @@
 ﻿
 using StaffHub.DAL.Entities;
-using StaffHub.PLL.ViewModels;
+using StaffHub.PLL.ViewModels.DepartmentVM;
 
 namespace StaffHub.PL.Controllers;
 

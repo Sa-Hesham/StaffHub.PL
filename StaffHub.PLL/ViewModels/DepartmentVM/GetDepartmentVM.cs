@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StaffHub.PLL.ViewModels;
+namespace StaffHub.PLL.ViewModels.DepartmentVM;
 
 public class GetDepartmentVM
 {

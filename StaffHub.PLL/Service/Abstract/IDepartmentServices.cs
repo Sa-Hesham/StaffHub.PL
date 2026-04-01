@@ -1,5 +1,7 @@
 ﻿
 
+using StaffHub.PLL.ViewModels.DepartmentVM;
+
 namespace StaffHub.PLL.Service.Abstract;
 
 public interface IDepartmentServices

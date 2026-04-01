@@ -18,6 +18,7 @@ public class Employee :BaseEntity
 
     public string  ?phoneNumber { get; set; } 
 
+
      public string ?Email { get; set; } 
 
 

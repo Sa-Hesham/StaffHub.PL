@@ -32,6 +32,7 @@ public class GenaricRepository<TEntity> : IGenaricRepository<TEntity> where TEnt
         {
             result.IsDeleted = true;
             result.DeletedOn = DateTime.Now;
+          
   
            return _context.SaveChanges()>0;  
          
@@ -67,6 +68,7 @@ public class GenaricRepository<TEntity> : IGenaricRepository<TEntity> where TEnt
         }
         else
         {
+            entity.ModifiedOn =DateTime.Now;
             _context.Entry(existintEntity).CurrentValues.SetValues(entity);
         }
         return _context.SaveChanges() > 0;   
