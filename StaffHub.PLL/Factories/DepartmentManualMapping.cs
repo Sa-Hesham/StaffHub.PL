@@ -67,7 +67,7 @@ internal  static class DepartmentManualMapping
             Name = department.Name,
             Description = department.Description,
             code = department.code,
-           
+             ModifiedOn=DateTime.Now,
         };  
 
 
