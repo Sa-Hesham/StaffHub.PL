@@ -1,7 +1,6 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace StaffHub.PLL.ViewModels;
+namespace StaffHub.PLL.ViewModels.DepartmentVM;
 
 public class UpdateDepartmentVM
 {

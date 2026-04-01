@@ -29,7 +29,9 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
 
 
         builder.Property(e => e.EmployeeType)
-          .HasConversion(e=> e.ToString(),
-          db=>(EmployeeType)Enum.Parse(typeof(EmployeeType), db));
+          .HasConversion(e => e.ToString(),
+          db => (EmployeeType)Enum.Parse(typeof(EmployeeType), db));    
+
+
     }
 }

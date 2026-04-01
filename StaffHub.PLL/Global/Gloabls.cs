@@ -5,3 +5,7 @@ global using StaffHub.DAL.Repository.Abstract;
 global using StaffHub.DAL.Entities;
 global using StaffHub.PLL.Factories;
 global using StaffHub.PLL.Common;
+global using StaffHub.PLL.ViewModels.EmployeeVM;
+global using StaffHub.DAL.Entities.EmployeeModule;
+global using StaffHub.DAL.Entities.Shared;
+global using System.ComponentModel.DataAnnotations;
