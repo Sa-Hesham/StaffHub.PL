@@ -12,8 +12,8 @@ public class CreateEmployeeVM
     [Range(22, 35 ,ErrorMessage ="older than 22 ")]
     public int? Age { get; set; }
 
-    [RegularExpression(@"^[1-9]{1,3}-[a-zA-Z]{5,10}-[a-zA-Z]{5,10}-[a-zA-Z]{5,10}$",
-        ErrorMessage = "Address must be like 123-Street-City-Country")]
+    [RegularExpression(@"^\d{1,3}-[a-zA-Z\s]{2,20}-[a-zA-Z\s]{2,20}-[a-zA-Z\s]{2,20}$",
+     ErrorMessage = "Address must be like 123-Street-City-Country")]
     public string? Address { get; set; }
 
     [DataType(DataType.Currency)]
@@ -33,7 +33,7 @@ public class CreateEmployeeVM
     [Display(Name = "Hiring Date")]
     public DateOnly HiringDate { get; set; }
 
-    public Gendar Gender { get; set; }
+    public Gendar Gendar { get; set; }
 
     public EmployeeType EmployeeType { get; set; }
 }

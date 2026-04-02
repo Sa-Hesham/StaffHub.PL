@@ -62,9 +62,12 @@ public class EmployeeService : IEmployeeService
         {
             return false;
         }
+        // Map values from the DTO onto the existing tracked entity to preserve
+        // fields that are not present in the DTO (e.g. CreatedOn) and keep EF tracking.
+        _mapper.Map(employee, dbemployee);
+
+     
         
-        var updatedemployee = _mapper.Map<UpdateEmployeeVM,Employee>(employee); 
-        
-        return _emprepo.Update(updatedemployee);    
+        return _emprepo.Update(dbemployee);    
     }
 }
