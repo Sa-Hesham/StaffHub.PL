@@ -68,8 +68,15 @@ public class GenaricRepository<TEntity> : IGenaricRepository<TEntity> where TEnt
         }
         else
         {
-            entity.ModifiedOn =DateTime.Now;
+            // Preserve creation metadata from the tracked entity so it is not overwritten
+            // by default/empty values coming from the passed-in entity.
+            entity.CreatedOn = existintEntity.CreatedOn;
+            entity.CreatedBy = existintEntity.CreatedBy;
+
             _context.Entry(existintEntity).CurrentValues.SetValues(entity);
+
+            // Set ModifiedOn on the tracked entity after applying values.
+            existintEntity.ModifiedOn = DateTime.Now;
         }
         return _context.SaveChanges() > 0;   
     }
